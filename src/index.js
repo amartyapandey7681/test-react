@@ -1,17 +1,45 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import Comp from './comp1/comp_1';
+import Comp2 from './comp2/comp_2';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import './index.css'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
+let names1 = {
+
+  id:1,
+  name:"john"
+}
+
+let names2 = {
+
+  id :2,
+  name:"doe"
+}
+
+let time = [{
+
+  h:3,
+  m:8
+},{
+  h:5,
+  m:10
+}]
+
+function Greeting(){
+
+
+  return (<div className='bb' >
+          <h1>Props In Action --</h1>
+          <Comp id= {names1.id} name = {names1.name}/>
+          <Comp id= {names2.id} name = {names2.name}/>
+          <Comp />
+          <Comp2 /> 
+          <Comp2 ti = {time}/>        
+          </div>);
+}
+
+ReactDOM.render(<Greeting />,document.getElementById('root'));
+
